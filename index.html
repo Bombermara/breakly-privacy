@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Breakly — Privacy Policy</title>
+<style>
+  :root {
+    --bg: #ffffff; --card: #f6f5fb; --ink: #1c1830; --soft: #5b5570;
+    --accent: #FF6B2C; --border: #e6e3f0;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root { --bg: #141021; --card: #1e1930; --ink: #f2f0f8; --soft: #a8a2bd; --border: #2c2542; }
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; padding: 0; background: var(--bg); color: var(--ink);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    line-height: 1.6; -webkit-font-smoothing: antialiased;
+  }
+  .wrap { max-width: 760px; margin: 0 auto; padding: 32px 20px 80px; }
+  header { display: flex; align-items: center; gap: 14px; margin-bottom: 8px; }
+  .logo { width: 52px; height: 52px; border-radius: 15px;
+    background: linear-gradient(135deg, #FF6B2C, #FF3D8B); display: flex;
+    align-items: center; justify-content: center; font-size: 28px; flex: none; }
+  h1 { font-size: 1.6rem; margin: 0; }
+  .tagline { color: var(--soft); font-size: .95rem; margin: 2px 0 0; }
+  .updated { color: var(--soft); font-size: .85rem; margin: 18px 0 24px; }
+  .toggle { display: inline-flex; gap: 4px; background: var(--card); border: 1px solid var(--border);
+    border-radius: 999px; padding: 4px; margin-bottom: 26px; }
+  .toggle button { border: none; background: transparent; color: var(--soft); font-weight: 600;
+    padding: 6px 16px; border-radius: 999px; cursor: pointer; font-size: .9rem; }
+  .toggle button.active { background: var(--accent); color: #fff; }
+  h2 { font-size: 1.15rem; margin: 30px 0 8px; }
+  p, li { color: var(--ink); }
+  ul { padding-left: 20px; }
+  a { color: var(--accent); }
+  .card { background: var(--card); border: 1px solid var(--border); border-radius: 16px;
+    padding: 16px 20px; margin: 16px 0; }
+  code { background: var(--card); padding: 1px 6px; border-radius: 6px; font-size: .9em; }
+  footer { margin-top: 40px; color: var(--soft); font-size: .82rem; border-top: 1px solid var(--border); padding-top: 20px; }
+  [data-lang] { display: none; }
+  [data-lang].show { display: block; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <div class="logo">☕</div>
+    <div>
+      <h1>Breakly — Pausa caffè</h1>
+      <p class="tagline">Privacy Policy</p>
+    </div>
+  </header>
+
+  <div class="toggle">
+    <button id="btn-it" class="active" onclick="setLang('it')">Italiano</button>
+    <button id="btn-en" onclick="setLang('en')">English</button>
+  </div>
+
+  <!-- ============ ITALIANO ============ -->
+  <div data-lang="it" class="show">
+    <p class="updated">Ultimo aggiornamento: 22 luglio 2026</p>
+
+    <p>Breakly è un gioco per decidere in modo divertente chi offre il caffè. Rispettiamo la tua privacy e raccogliamo il minimo indispensabile. Questa informativa spiega quali dati tratta l'app e come.</p>
+
+    <h2>1. Nessun account</h2>
+    <p>Breakly non richiede la creazione di un account, né email, password o login. Non ti chiediamo dati personali per usare l'app.</p>
+
+    <h2>2. Dati trattati</h2>
+    <div class="card">
+      <p><strong>Partita rapida:</strong> i nomi dei giocatori che inserisci restano <strong>solo su questo dispositivo</strong> (memoria locale dell'app) e non vengono inviati da nessuna parte.</p>
+      <p><strong>Modalità gruppo:</strong> se crei o entri in un gruppo, il nome del gruppo, i nomi e gli avatar (emoji e colore) dei membri e le statistiche delle partite (quante volte hai offerto, caffè offerti, partite giocate) vengono salvati sul nostro backend per permettere la sincronizzazione tra i dispositivi del gruppo.</p>
+    </div>
+    <p>A questi dati è associato un <strong>identificativo tecnico anonimo</strong> generato automaticamente per il tuo dispositivo. Non è collegato alla tua identità reale, a un'email o a un account.</p>
+
+    <h2>3. Cosa NON raccogliamo</h2>
+    <ul>
+      <li>Nessun tracciamento pubblicitario, nessun IDFA, nessuna profilazione.</li>
+      <li>Nessuno strumento di analytics di terze parti.</li>
+      <li>Nessuna pubblicità.</li>
+      <li>Nessun accesso a posizione, rubrica, foto, microfono o fotocamera.</li>
+    </ul>
+
+    <h2>4. Condivisione dei dati</h2>
+    <p>In modalità gruppo, i nomi, gli avatar e le statistiche sono visibili <strong>agli altri membri dello stesso gruppo</strong> (chi possiede il codice di invito). Non vendiamo né condividiamo i tuoi dati con terze parti per finalità di marketing.</p>
+
+    <h2>5. Dove sono conservati i dati</h2>
+    <p>I dati della modalità gruppo sono conservati tramite <strong>Supabase</strong>, il nostro fornitore di infrastruttura (database e autenticazione anonima), che li elabora per nostro conto come responsabile del trattamento.</p>
+
+    <h2>6. Conservazione ed eliminazione</h2>
+    <p>Puoi eliminare i tuoi dati in qualsiasi momento da <strong>Impostazioni → Privacy e dati → Elimina i miei dati</strong> nell'app: questo cancella i giocatori locali e i dati condivisi associati all'identificativo anonimo del tuo dispositivo. Puoi anche uscire da un gruppo o rimuovere singoli membri dalla schermata del gruppo.</p>
+
+    <h2>7. Minori</h2>
+    <p>Breakly non è indirizzata ai bambini e non raccoglie consapevolmente dati da minori di 13 anni.</p>
+
+    <h2>8. Modifiche</h2>
+    <p>Potremmo aggiornare questa informativa. Le modifiche saranno pubblicate su questa pagina con una nuova data di aggiornamento.</p>
+
+    <h2>9. Contatti</h2>
+    <p>Per domande o richieste relative alla privacy: <a href="mailto:INSERISCI-LA-TUA-EMAIL@esempio.com">INSERISCI-LA-TUA-EMAIL@esempio.com</a></p>
+  </div>
+
+  <!-- ============ ENGLISH ============ -->
+  <div data-lang="en">
+    <p class="updated">Last updated: July 22, 2026</p>
+
+    <p>Breakly is a game to decide, in a fun way, who buys the coffee. We respect your privacy and collect the bare minimum. This policy explains what data the app handles and how.</p>
+
+    <h2>1. No account</h2>
+    <p>Breakly does not require creating an account, nor an email, password or login. We do not ask for personal data to use the app.</p>
+
+    <h2>2. Data we handle</h2>
+    <div class="card">
+      <p><strong>Quick game:</strong> the player names you enter stay <strong>only on this device</strong> (the app's local storage) and are never sent anywhere.</p>
+      <p><strong>Group mode:</strong> if you create or join a group, the group name, the members' names and avatars (emoji and color) and the game statistics (times you paid, coffees bought, games played) are stored on our backend to enable sync across the group's devices.</p>
+    </div>
+    <p>This data is associated with an <strong>anonymous technical identifier</strong> automatically generated for your device. It is not linked to your real identity, an email, or an account.</p>
+
+    <h2>3. What we do NOT collect</h2>
+    <ul>
+      <li>No advertising tracking, no IDFA, no profiling.</li>
+      <li>No third-party analytics tools.</li>
+      <li>No advertising.</li>
+      <li>No access to location, contacts, photos, microphone or camera.</li>
+    </ul>
+
+    <h2>4. Data sharing</h2>
+    <p>In group mode, names, avatars and statistics are visible <strong>to the other members of the same group</strong> (those who have the invite code). We do not sell or share your data with third parties for marketing purposes.</p>
+
+    <h2>5. Where data is stored</h2>
+    <p>Group-mode data is stored via <strong>Supabase</strong>, our infrastructure provider (database and anonymous authentication), which processes it on our behalf as a data processor.</p>
+
+    <h2>6. Retention and deletion</h2>
+    <p>You can delete your data at any time from <strong>Settings → Privacy and data → Delete my data</strong> in the app: this removes local players and the shared data associated with your device's anonymous identifier. You can also leave a group or remove individual members from the group screen.</p>
+
+    <h2>7. Children</h2>
+    <p>Breakly is not directed to children and does not knowingly collect data from children under 13.</p>
+
+    <h2>8. Changes</h2>
+    <p>We may update this policy. Changes will be posted on this page with a new "last updated" date.</p>
+
+    <h2>9. Contact</h2>
+    <p>For any privacy questions or requests: <a href="mailto:INSERISCI-LA-TUA-EMAIL@esempio.com">INSERISCI-LA-TUA-EMAIL@esempio.com</a></p>
+  </div>
+
+  <footer>
+    © 2026 Breakly · Pausa caffè. Questa pagina è l'informativa privacy ufficiale dell'app Breakly.
+  </footer>
+</div>
+
+<script>
+  function setLang(l) {
+    document.querySelectorAll('[data-lang]').forEach(function (el) {
+      el.classList.toggle('show', el.getAttribute('data-lang') === l);
+    });
+    document.getElementById('btn-it').classList.toggle('active', l === 'it');
+    document.getElementById('btn-en').classList.toggle('active', l === 'en');
+    document.documentElement.lang = l;
+  }
+</script>
+</body>
+</html>
