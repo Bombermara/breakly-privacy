@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Breakly — Supporto / Support</title>
+<style>
+  :root {
+    --bg: #ffffff; --card: #f6f5fb; --ink: #1c1830; --soft: #5b5570;
+    --accent: #FF6B2C; --border: #e6e3f0;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root { --bg: #141021; --card: #1e1930; --ink: #f2f0f8; --soft: #a8a2bd; --border: #2c2542; }
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0; padding: 0; background: var(--bg); color: var(--ink);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    line-height: 1.6; -webkit-font-smoothing: antialiased;
+  }
+  .wrap { max-width: 720px; margin: 0 auto; padding: 32px 20px 80px; }
+  header { display: flex; align-items: center; gap: 14px; margin-bottom: 10px; }
+  .logo { width: 52px; height: 52px; border-radius: 15px;
+    background: linear-gradient(135deg, #FF6B2C, #FF3D8B); display: flex;
+    align-items: center; justify-content: center; font-size: 28px; flex: none; }
+  h1 { font-size: 1.6rem; margin: 0; }
+  .tagline { color: var(--soft); font-size: .95rem; margin: 2px 0 0; }
+  .toggle { display: inline-flex; gap: 4px; background: var(--card); border: 1px solid var(--border);
+    border-radius: 999px; padding: 4px; margin: 22px 0 26px; }
+  .toggle button { border: none; background: transparent; color: var(--soft); font-weight: 600;
+    padding: 6px 16px; border-radius: 999px; cursor: pointer; font-size: .9rem; }
+  .toggle button.active { background: var(--accent); color: #fff; }
+  h2 { font-size: 1.15rem; margin: 28px 0 8px; }
+  p, li { color: var(--ink); }
+  a { color: var(--accent); }
+  .card { background: var(--card); border: 1px solid var(--border); border-radius: 16px;
+    padding: 18px 20px; margin: 16px 0; }
+  .contact { font-size: 1.05rem; font-weight: 600; }
+  footer { margin-top: 40px; color: var(--soft); font-size: .82rem; border-top: 1px solid var(--border); padding-top: 20px; }
+  [data-lang] { display: none; }
+  [data-lang].show { display: block; }
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <div class="logo">☕</div>
+    <div>
+      <h1>Breakly — Pausa caffè</h1>
+      <p class="tagline">Supporto / Support</p>
+    </div>
+  </header>
+
+  <div class="toggle">
+    <button id="btn-it" class="active" onclick="setLang('it')">Italiano</button>
+    <button id="btn-en" onclick="setLang('en')">English</button>
+  </div>
+
+  <!-- ITALIANO -->
+  <div data-lang="it" class="show">
+    <p>Hai bisogno di aiuto con Breakly? Siamo qui. Scrivici e ti rispondiamo il prima possibile.</p>
+    <div class="card">
+      <p class="contact">📧 <a href="mailto:andreamaratea11@gmail.com">andreamaratea11@gmail.com</a></p>
+    </div>
+
+    <h2>Domande frequenti</h2>
+    <p><strong>Come funziona un gruppo?</strong><br>
+    Crea un gruppo e condividi il codice con i colleghi. Chi ha il codice può entrare. La classifica dei caffè si aggiorna in tempo reale per tutti i membri.</p>
+    <p><strong>Devo creare un account?</strong><br>
+    No. Breakly non richiede account, email o password.</p>
+    <p><strong>Come elimino i miei dati?</strong><br>
+    In app: Impostazioni → Privacy e dati → Elimina i miei dati.</p>
+    <p><strong>Privacy</strong><br>
+    Leggi l'informativa: <a href="./">Privacy Policy</a>.</p>
+  </div>
+
+  <!-- ENGLISH -->
+  <div data-lang="en">
+    <p>Need help with Breakly? We're here. Drop us a line and we'll get back to you as soon as possible.</p>
+    <div class="card">
+      <p class="contact">📧 <a href="mailto:andreamaratea11@gmail.com">andreamaratea11@gmail.com</a></p>
+    </div>
+
+    <h2>Frequently asked questions</h2>
+    <p><strong>How does a group work?</strong><br>
+    Create a group and share the code with your colleagues. Anyone with the code can join. The coffee leaderboard updates in real time for all members.</p>
+    <p><strong>Do I need an account?</strong><br>
+    No. Breakly requires no account, email or password.</p>
+    <p><strong>How do I delete my data?</strong><br>
+    In the app: Settings → Privacy and data → Delete my data.</p>
+    <p><strong>Privacy</strong><br>
+    Read the policy: <a href="./">Privacy Policy</a>.</p>
+  </div>
+
+  <footer>
+    © 2026 Breakly · Pausa caffè.
+  </footer>
+</div>
+
+<script>
+  function setLang(l) {
+    document.querySelectorAll('[data-lang]').forEach(function (el) {
+      el.classList.toggle('show', el.getAttribute('data-lang') === l);
+    });
+    document.getElementById('btn-it').classList.toggle('active', l === 'it');
+    document.getElementById('btn-en').classList.toggle('active', l === 'en');
+    document.documentElement.lang = l;
+  }
+</script>
+</body>
+</html>
