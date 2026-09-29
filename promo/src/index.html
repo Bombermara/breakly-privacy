@@ -4,13 +4,12 @@
 @font-face{font-family:F;src:url(f600.woff2);font-weight:600}
 @font-face{font-family:F;src:url(f700.woff2);font-weight:700}
 *{box-sizing:border-box;margin:0;padding:0}
-html,body{width:1080px;height:1920px;overflow:hidden;background:#141021}
+html,body{overflow:hidden;background:#141021}
 body{font-family:F,"Noto Color Emoji",sans-serif;color:#fff}
 #stage{position:absolute;inset:0;overflow:hidden}
-.abs{position:absolute}
 #bg{position:absolute;inset:0;background:radial-gradient(circle at 50% 38%,#3a2560 0%,#1d1533 45%,#110d1d 100%)}
 #bg2{position:absolute;inset:0;background:radial-gradient(circle at 50% 45%,#ff9a3c 0%,#ff6b2c 40%,#ff3d8b 100%)}
-#rays{position:absolute;left:540px;top:900px;width:2600px;height:2600px;margin:-1300px 0 0 -1300px;border-radius:50%;
+#rays{position:absolute;width:2600px;height:2600px;margin:-1300px 0 0 -1300px;border-radius:50%;
  background:repeating-conic-gradient(rgba(255,255,255,.10) 0 10deg,rgba(255,255,255,0) 10deg 20deg);
  -webkit-mask:radial-gradient(circle,#000 0,#000 25%,transparent 60%)}
 #glow{position:absolute;width:1100px;height:1100px;border-radius:50%;margin:-550px 0 0 -550px;
@@ -21,8 +20,7 @@ canvas{position:absolute;inset:0}
 #steam{transform-origin:50% 31.5%}
 #shadow{position:absolute;width:420px;height:60px;margin:-30px 0 0 -210px;border-radius:50%;
  background:radial-gradient(ellipse,rgba(0,0,0,.45),transparent 70%)}
-.t{position:absolute;left:0;width:1080px;text-align:center;font-weight:700;line-height:1.08;
- text-shadow:0 8px 30px rgba(0,0,0,.35)}
+.t{position:absolute;text-align:center;font-weight:700;line-height:1.08;text-shadow:0 8px 30px rgba(0,0,0,.35)}
 .t span{display:inline-block;transform-origin:50% 80%}
 .grad{background:linear-gradient(90deg,#FFB03A,#FF6B2C 45%,#FF3D8B);-webkit-background-clip:text;color:transparent;
  text-shadow:none;filter:drop-shadow(0 6px 20px rgba(255,80,80,.35))}
@@ -33,26 +31,28 @@ canvas{position:absolute;inset:0}
 .bub{position:absolute;white-space:nowrap;background:#fff;color:#1c1830;font-weight:700;font-size:40px;padding:18px 28px;
  border-radius:34px;box-shadow:0 12px 30px rgba(0,0,0,.35);transform-origin:50% 100%}
 .bub:after{content:"";position:absolute;left:50%;bottom:-18px;margin-left:-14px;border:14px solid transparent;border-top:18px solid #fff;border-bottom:0}
-#wheelwrap{position:absolute;left:540px;top:860px;width:0;height:0}
+#wheelwrap,#banner,#cta{position:absolute;width:0;height:0}
 #wheel{position:absolute;left:-400px;top:-400px;width:800px;height:800px}
-#pointer{position:absolute;left:-42px;top:-470px;width:84px;height:100px}
-#banner{position:absolute;left:540px;top:860px;width:0;height:0}
+#pointer{position:absolute;left:-42px;top:-470px;width:84px;height:100px;transform-origin:50% 20%}
 #banner .card{position:absolute;left:-400px;top:-230px;width:800px;height:460px;border-radius:60px;
  background:linear-gradient(135deg,#FF8A2C,#FF3D8B);box-shadow:0 30px 80px rgba(255,61,139,.55);text-align:center;padding-top:40px;border:8px solid #fff}
-.feat{position:absolute;left:90px;width:900px;height:196px;border-radius:44px;background:rgba(255,255,255,.1);
- border:3px solid rgba(255,255,255,.18);display:flex;align-items:center;padding:0 36px;gap:34px;
- box-shadow:0 20px 50px rgba(0,0,0,.3);backdrop-filter:blur(6px)}
+.feat{position:absolute;border-radius:44px;background:rgba(255,255,255,.1);
+ border:3px solid rgba(255,255,255,.18);display:flex;align-items:center;padding:0 34px;gap:30px;
+ box-shadow:0 20px 50px rgba(0,0,0,.3)}
 .feat .ic{width:124px;height:124px;flex:none;border-radius:34px;display:flex;align-items:center;justify-content:center;font-size:70px;
  background:linear-gradient(135deg,#FF8A2C,#FF3D8B)}
 .feat h3{font-size:52px;font-weight:700;line-height:1.05}
 .feat p{font-size:34px;font-weight:600;opacity:.8;margin-top:6px}
-#logo{position:absolute;left:0;width:1080px;top:150px;display:flex;justify-content:center;align-items:center;gap:30px}
-#logo .tile{width:150px;height:150px;border-radius:42px;background:linear-gradient(135deg,#2a1f45,#141021);display:flex;
- align-items:center;justify-content:center;font-size:90px;box-shadow:0 20px 50px rgba(0,0,0,.35)}
+.h .feat h3{font-size:46px}.h .feat p{font-size:30px}.h .feat .ic{width:110px;height:110px;font-size:62px}
+#logo{position:absolute;display:flex;justify-content:center;align-items:center;gap:30px}
+#logo img{width:170px;height:170px;filter:drop-shadow(0 18px 36px rgba(60,10,20,.45))}
 #logo .nm{font-size:150px;font-weight:700;letter-spacing:-2px;text-shadow:0 10px 30px rgba(120,20,40,.35)}
-#cta{position:absolute;left:540px;top:1690px;width:0;height:0}
-#cta div{position:absolute;left:-330px;top:-72px;width:660px;height:144px;border-radius:72px;background:#141021;color:#fff;
- font-size:58px;font-weight:700;display:flex;align-items:center;justify-content:center;gap:20px;box-shadow:0 20px 50px rgba(60,0,30,.45)}
+#cta .btn{position:absolute;left:-340px;top:-72px;width:680px;height:144px;border-radius:72px;background:#141021;color:#fff;
+ font-size:60px;font-weight:700;display:flex;align-items:center;justify-content:center;gap:20px;box-shadow:0 20px 50px rgba(60,0,30,.45)}
+#stores{position:absolute;display:flex;justify-content:center;gap:24px}
+#stores div{background:rgba(255,255,255,.95);color:#1c1830;font-weight:700;font-size:40px;padding:14px 34px;border-radius:999px;
+ box-shadow:0 12px 30px rgba(60,0,30,.3);display:flex;align-items:center;gap:14px}
+#stores svg{width:40px;height:40px}
 #flash{position:absolute;inset:0;background:#fff;opacity:0}
 </style></head><body>
 <div id="stage">
@@ -60,31 +60,30 @@ canvas{position:absolute;inset:0}
  <div id="bg2"></div>
  <div id="rays"></div>
  <div id="glow"></div>
- <canvas id="back" width="1080" height="1920"></canvas>
+ <canvas id="back"></canvas>
 
- <!-- scene 1 text -->
- <div class="t" id="s1a" style="top:250px;font-size:64px;font-weight:600;opacity:.85"></div>
- <div class="t" id="s1b" style="top:350px;font-size:128px"></div>
+ <div class="t" id="s1a" style="font-size:64px;font-weight:600;opacity:.85"></div>
+ <div class="t" id="s1b" style="font-size:128px"></div>
 
- <!-- scene 2 friends -->
  <div id="friends"></div>
- <div class="t" id="basta" style="top:640px;font-size:220px"></div>
+ <div class="t" id="basta" style="font-size:220px"></div>
 
- <!-- scene 3 -->
- <div class="t" id="s3a" style="top:150px;font-size:84px"></div>
+ <div class="t" id="s3a" style="font-size:84px"></div>
  <div id="wheelwrap">
   <svg id="wheel" viewBox="-400 -400 800 800"></svg>
   <svg id="pointer" viewBox="0 0 84 100"><path d="M6 8 Q42 -6 78 8 L46 94 Q42 100 38 94 Z" fill="#fff" stroke="#1c1830" stroke-width="6"/><circle cx="42" cy="26" r="10" fill="#FF3D8B"/></svg>
  </div>
 
- <!-- scene 4 -->
- <div class="t" id="s4a" style="top:110px;font-size:80px"></div>
+ <div class="t" id="s4a" style="font-size:80px"></div>
  <div id="feats"></div>
 
- <!-- scene 5 -->
- <div id="logo"><div class="tile">☕</div><div class="nm">Breakly</div></div>
- <div class="t" id="s5a" style="top:1400px;font-size:74px;text-shadow:0 8px 24px rgba(120,20,40,.35)"></div>
- <div id="cta"><div>Scaricala ora <span style="font-size:50px">📲</span></div></div>
+ <div id="logo"><img src="logo.png"><div class="nm">Breakly</div></div>
+ <div class="t" id="s5a" style="font-size:74px;text-shadow:0 8px 24px rgba(120,20,40,.35)"></div>
+ <div id="cta"><div class="btn">Scaricala gratis <span style="font-size:52px">📲</span></div></div>
+ <div id="stores">
+  <div><svg viewBox="0 0 24 24"><rect x="6" y="2" width="12" height="20" rx="3" fill="none" stroke="#1c1830" stroke-width="2.2"/><circle cx="12" cy="18.5" r="1.3" fill="#1c1830"/></svg>iOS</div>
+  <div><svg viewBox="0 0 24 24"><path d="M6 3 L20 12 L6 21 Z" fill="none" stroke="#1c1830" stroke-width="2.2" stroke-linejoin="round"/></svg>Android</div>
+ </div>
 
  <div id="shadow"></div>
  <div id="chicca"><img src="body.png"><img id="steam" src="steam.png"><img id="blink" src="blink.png"></div>
@@ -95,11 +94,43 @@ canvas{position:absolute;inset:0}
    <div style="font-size:46px;font-weight:600;opacity:.9;margin-top:6px">☕ ×4 &nbsp;in arrivo</div>
  </div></div>
 
- <canvas id="front" width="1080" height="1920"></canvas>
+ <canvas id="front"></canvas>
  <div id="flash"></div>
 </div>
 <script>
 const $=id=>document.getElementById(id);
+const H=location.search.includes('h');
+const VW=H?1920:1080,VH=H?1080:1920;
+if(H)document.body.classList.add('h');
+document.documentElement.style.width=document.body.style.width=VW+'px';
+document.documentElement.style.height=document.body.style.height=VH+'px';
+
+// ---------- layout per aspect ratio ----------
+const LV={
+ s1:{x:540,y:1580,s:1}, s2:{x:540,y:1860,s:.62}, s3:{x:540,y:1860,s:.62}, s4:{x:540,y:1880,s:.62}, s5:{x:540,y:1330,s:.95},
+ friends:[[250,330],[830,330],[250,830],[830,830]],
+ wheel:{x:540,y:860,sc:1},
+ text:{s1a:[0,250,1080],s1b:[0,350,1080],basta:[0,640,1080],s3a:[0,150,1080],s4a:[0,110,1080],s5a:[0,1400,1080]},
+ feats:i=>({l:90,t:380+i*232,w:900,h:196,from:900}),
+ logo:[0,150,1080], cta:[540,1690], stores:[0,1795,1080],
+};
+const LH={
+ s1:{x:1400,y:1020,s:.9}, s2:{x:440,y:1060,s:.6}, s3:{x:360,y:1060,s:.6}, s4:{x:340,y:1070,s:.6}, s5:{x:560,y:1020,s:.85},
+ friends:[[960,170],[1560,170],[960,600],[1560,600]],
+ wheel:{x:1200,y:585,sc:.8},
+ text:{s1a:[80,330,1000],s1b:[80,420,1000],basta:[700,390,1120],s3a:[700,36,1000],s4a:[700,70,1220],s5a:[800,440,1060]},
+ feats:i=>({l:700+(i%2)*610,t:330+Math.floor(i/2)*300,w:580,h:250,from:1300}),
+ logo:[800,170,1060], cta:[1330,730], stores:[800,850,1060],
+};
+const L=H?LH:LV;
+function place(id,[l,t,w]){const e=$(id);e.style.left=l+'px';e.style.top=t+'px';e.style.width=w+'px'}
+Object.entries(L.text).forEach(([k,v])=>place(k,v));
+place('logo',L.logo);place('stores',L.stores);
+$('cta').style.left=L.cta[0]+'px';$('cta').style.top=L.cta[1]+'px';
+$('wheelwrap').style.left=$('banner').style.left=L.wheel.x+'px';
+$('wheelwrap').style.top=$('banner').style.top=L.wheel.y+'px';
+['back','front'].forEach(id=>{$(id).width=VW;$(id).height=VH});
+
 const clamp=(x,a=0,b=1)=>Math.max(a,Math.min(b,x));
 const seg=(t,a,b)=>clamp((t-a)/(b-a));
 const lerp=(a,b,k)=>a+(b-a)*k;
@@ -118,19 +149,20 @@ const W1=words($('s1a'),'Ore 10:30. Pausa caffè…');
 const W1b=words($('s1b'),'Ma… / *chi *offre? 🤔');
 const WB=words($('basta'),'BASTA! ✋');
 const W3=words($('s3a'),'Decide *Breakly!');
-const W4=words($('s4a'),'Zero drammi. / *Solo *caffè.');
-const W5=words($('s5a'),'Il caffè? Lo decide il gioco.');
+const W4=words($('s4a'),H?'Zero drammi. *Solo *caffè.':'Zero drammi. / *Solo *caffè.');
+const W5=words($('s5a'),H?'Il caffè? / Lo decide il gioco.':'Il caffè? Lo decide il gioco.');
 
 // ---------- friends ----------
 const FR=[
- {n:'Marco',e:'🦊',c:'#FFB03A',x:250,y:330,b:'Ho offerto ieri!',bt:3.75,bx:0,by:-120},
- {n:'Giulia',e:'🐼',c:'#8FD3FF',x:830,y:330,b:'Tocca a Luca!',bt:4.35,bx:0,by:-120},
- {n:'Luca',e:'🐸',c:'#7BE38F',x:250,y:830,b:'Non è vero! 😤',bt:4.95,bx:40,by:-120},
- {n:'Sara',e:'🐱',c:'#FF9FD0',x:830,y:830,b:'Io sono a dieta…',bt:5.55,bx:-60,by:-120},
+ {n:'Marco',e:'🦊',c:'#FFB03A',b:'Ho offerto ieri!',bt:3.75,bx:0,by:-120},
+ {n:'Giulia',e:'🐼',c:'#8FD3FF',b:'Tocca a Luca!',bt:4.35,bx:0,by:-120},
+ {n:'Luca',e:'🐸',c:'#7BE38F',b:'Non è vero! 😤',bt:4.95,bx:40,by:-120},
+ {n:'Sara',e:'🐱',c:'#FF9FD0',b:'Io sono a dieta…',bt:5.55,bx:-60,by:-120},
 ];
-FR.forEach(f=>{const d=document.createElement('div');d.className='friend';d.style.left=f.x+'px';d.style.top=f.y+'px';
+FR.forEach((f,i)=>{[f.x,f.y]=L.friends[i];const d=document.createElement('div');d.className='friend';d.style.left=f.x+'px';d.style.top=f.y+'px';
  d.innerHTML=`<div class="av" style="background:${f.c}">${f.e}</div><div class="name">${f.n}</div>`;
- const b=document.createElement('div');b.className='bub';b.textContent=f.b;d.appendChild(b);$('friends').appendChild(d);f.el=d;f.bub=b});
+ const b=document.createElement('div');b.className='bub';b.textContent=f.b;d.appendChild(b);$('friends').appendChild(d);f.el=d;f.bub=b;
+ f.side=f.x<(H?1260:540)?-1:1});
 
 // ---------- wheel ----------
 const WN=[['Marco','🦊','#FFB03A'],['Giulia','🐼','#5BB8F5'],['Luca','🐸','#4CC96A'],['Sara','🐱','#FF6FB5']];
@@ -140,21 +172,21 @@ const WN=[['Marco','🦊','#FFB03A'],['Giulia','🐼','#5BB8F5'],['Luca','🐸',
   const am=i*90+45;s+=`<g transform="rotate(${am})"><text y="-250" text-anchor="middle" font-size="96" dominant-baseline="middle">${w[1]}</text>
    <text y="-140" text-anchor="middle" font-size="52" font-weight="700" fill="#fff" font-family="F">${w[0]}</text></g>`});
  for(let i=0;i<24;i++){const a=i*15*Math.PI/180;s+=`<circle cx="${389*Math.sin(a)}" cy="${-389*Math.cos(a)}" r="7" fill="${i%2?'#FF6B2C':'#FFD27A'}"/>`}
- s+='<circle r="70" fill="#fff"/><circle r="52" fill="#141021"/><text text-anchor="middle" dominant-baseline="central" font-size="56">☕</text>';
+ s+='<circle r="74" fill="#fff"/><clipPath id="lc"><rect x="-62" y="-62" width="124" height="124" rx="30"/></clipPath><image href="logo.png" x="-62" y="-62" width="124" height="124" clip-path="url(#lc)"/>';
  $('wheel').innerHTML=s})();
 const SPIN0=8.0,SPIN1=11.2,SPINR=360*5+135; // Luca center (225deg) ends at top
 function wheelAngle(t){const k=seg(t,SPIN0,SPIN1);return -20*Math.sin(Math.PI*seg(t,7.7,SPIN0))+SPINR*(1-Math.pow(1-k,4))}
-window.wheelAngle=wheelAngle;
 
 // ---------- features ----------
 const FE=[['⚡','Partita rapida','Scrivi i nomi e si gioca'],['👥','Modalità gruppo','Sincronizzata tra colleghi'],
  ['📊','Statistiche','Chi offre di più? Lo sai subito'],['🔒','Niente account','Zero registrazioni, privacy vera']];
-FE.forEach((f,i)=>{const d=document.createElement('div');d.className='feat';d.style.top=(380+i*232)+'px';
+FE.forEach((f,i)=>{const d=document.createElement('div');d.className='feat';const g=L.feats(i);f.g=g;
+ Object.assign(d.style,{left:g.l+'px',top:g.t+'px',width:g.w+'px',height:g.h+'px'});
  d.innerHTML=`<div class="ic">${f[0]}</div><div><h3>${f[1]}</h3><p>${f[2]}</p></div>`;$('feats').appendChild(d);f.el=d});
 
 // ---------- particles ----------
 const bctx=$('back').getContext('2d'),fctx=$('front').getContext('2d');
-const R0=rng(7),BEANS=[...Array(26)].map(()=>({x:R0()*1080,d:R0()*3,sp:600+R0()*700,r:R0()*6.28,vr:(R0()-.5)*6,s:.6+R0()*.9}));
+const R0=rng(7),BEANS=[...Array(H?34:26)].map(()=>({x:R0()*VW,d:R0()*3,sp:(600+R0()*700)*VH/1920,r:R0()*6.28,vr:(R0()-.5)*6,s:.6+R0()*.9}));
 function bean(c,x,y,r,s,a){c.save();c.globalAlpha=a;c.translate(x,y);c.rotate(r);c.scale(s,s);
  c.fillStyle='#6b3a1e';c.beginPath();c.ellipse(0,0,26,36,0,0,7);c.fill();
  c.strokeStyle='#3b1d0c';c.lineWidth=5;c.beginPath();c.moveTo(0,-30);c.bezierCurveTo(-10,-10,10,10,0,30);c.stroke();
@@ -175,74 +207,61 @@ function ring(c,t,t0,ox,oy,col){const d=t-t0;if(d<0||d>.6)return;const k=d/.6;c.
 // ---------- chicca pose ----------
 const CH=$('chicca'),ST=$('steam'),BL=$('blink'),SH=$('shadow');
 function beatHop(t,amp){return -Math.abs(Math.sin(Math.PI*2*t))*amp}
+function mv(a,b,k){return{x:lerp(a.x,b.x,k),y:lerp(a.y,b.y,k),s:lerp(a.s,b.s,k)}}
 function pose(t){
- let x=540,y=1580,s=1,rot=0,sx=1,sy=1,flip=1,op=1;
- // scene1 drop
- if(t<3.4){
-  if(t<.95){y=-200}
-  else if(t<1.45){const k=eIn(seg(t,.95,1.45));y=lerp(-80,1580,k);sx=.88;sy=1.14}
+ let x,y,s,g,rot=0,sx=1,sy=1,flip=1;
+ if(t<3.2){({x,y,s}=L.s1);g=y;
+  if(t<.95){y=-300}
+  else if(t<1.45){const k=eIn(seg(t,.95,1.45));y=lerp(-80,L.s1.y,k);sx=.88;sy=1.14}
   else{const d=t-1.45,q=.3*Math.exp(-5.5*d)*Math.cos(17*d);sy=1-q;sx=1+q*.8;
    if(t>2.2)y+=beatHop(t,14);rot=Math.sin(t*3)*2}
- }
- // scene2
- if(t>=3.2&&t<7.6){const k=eIO(seg(t,3.2,3.8));x=540;y=lerp(1580,1860,k);s=lerp(1,.62,k);
+ }else if(t<7.6){const k=eIO(seg(t,3.2,3.8));({x,y,s}=mv(L.s1,L.s2,k));g=y;
   y+=beatHop(t,10)*k;flip=(t>3.9&&t<6.2)?(Math.floor((t-3.75)/.6)%2?-1:1):1;
-  const hj=seg(t,6.2,6.75);if(hj>0&&hj<1){y-=Math.sin(Math.PI*hj)*260;s*=1+.15*Math.sin(Math.PI*hj);rot=Math.sin(Math.PI*hj)*-10}
+  const hj=seg(t,6.2,6.75);if(hj>0&&hj<1){y-=Math.sin(Math.PI*hj)*(H?200:260);s*=1+.15*Math.sin(Math.PI*hj);rot=Math.sin(Math.PI*hj)*-10}
   const land=t-6.75;if(land>0){const q=.25*Math.exp(-6*land)*Math.cos(18*land);sy=1-q;sx=1+q*.8}
- }
- // scene3
- if(t>=7.6&&t<12.6){y=1860;s=.62;const k=eIO(seg(t,7.6,8.0));x=540;
+ }else if(t<12.6){const k=eIO(seg(t,7.6,8.0));({x,y,s}=mv(L.s2,L.s3,k));g=y;
   y+=beatHop(t,8)*(t>11.2?3:1);
   if(t>=8&&t<11.2){rot=Math.sin(t*14)*3*(1-seg(t,10.4,11.2))}
   if(t>11.2){const d=t-11.2;rot=Math.sin(d*12)*8*Math.exp(-d*1.2)}
- }
- // scene4
- if(t>=12.6&&t<16.6){x=540;y=1880;s=.62;rot=Math.sin(Math.PI*2*t)*8;y+=beatHop(t,22);
-  const q=Math.abs(Math.cos(Math.PI*2*t));sy=1-.04*(1-q);sx=1+.04*(1-q)}
- // scene5
- if(t>=16.6){const k=seg(t,16.6,17.3);x=540;y=lerp(1880,1330,eBack(k));s=lerp(.62,.95,eOut(k));
+ }else if(t<16.6){const k=eIO(seg(t,12.6,13.0));({x,y,s}=mv(L.s3,L.s4,k));g=y;
+  rot=Math.sin(Math.PI*2*t)*8;y+=beatHop(t,22);
+  const q=Math.abs(Math.cos(Math.PI*2*t));sy=1-.04*(1-q);sx=1+.04*(1-q)
+ }else{const k=seg(t,16.6,17.3);x=lerp(L.s4.x,L.s5.x,eOut(k));y=lerp(L.s4.y,L.s5.y,eBack(k));s=lerp(L.s4.s,L.s5.s,eOut(k));g=L.s5.y;
   if(t>17.3){const d=t-17.3,q=.18*Math.exp(-5*d)*Math.cos(16*d);sy=1-q;sx=1+q*.8;rot=Math.sin(t*3.2)*3;y+=beatHop(t,10)*seg(t,17.8,18.2)}
   if(t>19.2){const d=t-19.2;s*=1+.04*Math.sin(Math.min(d*8,Math.PI))}
  }
- return{x,y,s,rot,sx,sy,flip,op}}
-
+ return{x,y,s,g,rot,sx,sy,flip}}
 function blinkAt(t){const B=[2.6,5.2,9.3,14.1,18.3,19.5];return B.some(b=>t>=b&&t<b+.13)}
 
 // ---------- main render ----------
 window.render=function(t){
- // backgrounds
+ const P=pose(t),cy=P.y-330*P.s;
  const w5=seg(t,16.45,17.05);
- const P=pose(t);
- $('bg2').style.clipPath=`circle(${eIn(w5)*2400}px at ${P.x}px ${P.y-300*P.s}px)`;
- $('rays').style.top=(t<16.5?P.y-330*P.s:P.y-380*P.s)+'px';
+ $('bg2').style.clipPath=`circle(${eIn(w5)*2600}px at ${P.x}px ${cy}px)`;
+ $('rays').style.left=P.x+'px';$('rays').style.top=(t<16.5?cy:P.y-380*P.s)+'px';
  $('rays').style.transform=`rotate(${t*14}deg) scale(${t<16.5?.8:1.1})`;
  $('rays').style.opacity=t<1.5?0:t<16.5?.35*seg(t,1.5,2.2):.8;
- $('glow').style.left=P.x+'px';$('glow').style.top=(P.y-330*P.s)+'px';$('glow').style.opacity=t<16.5?clamp((t-1.4)*2)*.9:.35;
+ $('glow').style.left=P.x+'px';$('glow').style.top=cy+'px';$('glow').style.opacity=t<16.5?clamp((t-1.4)*2)*.9:.35;
  $('glow').style.transform=`scale(${P.s*(1+.06*Math.sin(t*6.28))})`;
 
- // stage shake
  let shx=0,shy=0;const sh=(a,b,m)=>{if(t>a&&t<b){const k=1-seg(t,a,b);shx+=Math.sin(t*93)*m*k;shy+=Math.cos(t*77)*m*k}};
  sh(1.45,1.8,18);sh(6.7,7.1,26);sh(11.2,11.6,20);sh(17.25,17.6,14);
  $('stage').style.transform=`translate(${shx}px,${shy}px)`;
 
- // chicca
- CH.style.left=(P.x-310)+'px';CH.style.top=(P.y-736)+'px';CH.style.opacity=P.op;
+ CH.style.left=(P.x-310)+'px';CH.style.top=(P.y-736)+'px';
  CH.style.transform=`rotate(${P.rot}deg) scale(${P.s*P.sx*P.flip},${P.s*P.sy})`;
  ST.style.transform=`skewX(${Math.sin(t*5)*5}deg) scaleY(${1+Math.sin(t*3.3)*.05})`;
  BL.style.opacity=blinkAt(t)?1:0;
- SH.style.left=P.x+'px';SH.style.top=(t<1.45?1580:P.y>1500?(t<16.6?Math.max(P.y,1580):1330):P.y)+'px';
- const air=clamp((( (t<1.45?1580:P.base||P.y)) - P.y)/400);
+ SH.style.left=P.x+'px';SH.style.top=P.g+'px';
  SH.style.transform=`scale(${P.s*(t<.95?0:t<1.45?seg(t,.95,1.45):1)})`;SH.style.opacity=t<16.6?.9:.5;
 
- // scene1 text
  popWords(W1,t,.25,.12);popWords(W1b,t,1.7,.14,.5);
  const o1=1-seg(t,3.1,3.4);$('s1a').style.opacity=o1;$('s1b').style.opacity=o1;
  $('s1b').style.transform=`translateY(${-seg(t,3.1,3.4)*80}px)`;
 
- // scene2 friends
  FR.forEach((f,i)=>{const k=seg(t,3.35+i*.1,3.85+i*.1),out=seg(t,6.72+i*.03,7.2+i*.03);
   const vis=t>3.3&&t<7.6;f.el.style.display=vis?'block':'none';if(!vis)return;
-  const dx=(f.x<540?-1:1)*eIn(out)*700;
+  const dx=f.side*eIn(out)*900;
   const wob=Math.sin(t*9+i)*(t>5.9&&t<6.8?9:2);
   f.el.style.transform=`translate(${dx}px,${-eIn(out)*200}px) scale(${eBack(k)}) rotate(${wob}deg)`;
   const bk=seg(t,f.bt,f.bt+.35),bo=seg(t,6.2,6.45);
@@ -251,49 +270,45 @@ window.render=function(t){
  popWords(WB,t,6.65,.08,.35);$('basta').style.opacity=1-seg(t,7.3,7.55);
  $('basta').style.transform=`scale(${1+seg(t,7.3,7.55)*.5})`;
 
- // scene3 wheel
  popWords(W3,t,7.55,.12);$('s3a').style.opacity=1-seg(t,12.45,12.75);
  const wk=seg(t,7.5,8.0),wo=seg(t,12.4,12.8);
  $('wheelwrap').style.display=(t>7.45&&t<12.85)?'block':'none';
- $('wheelwrap').style.transform=`scale(${eBack(wk)*(1-eIn(wo))}) rotate(${(1-eOut(wk))*-90}deg)`;
+ $('wheelwrap').style.transform=`scale(${L.wheel.sc*eBack(wk)*(1-eIn(wo))}) rotate(${(1-eOut(wk))*-90}deg)`;
  $('wheel').style.transform=`rotate(${wheelAngle(t)}deg)`;
- // pointer flick when passing boundaries
  const ang=wheelAngle(t)%90;$('pointer').style.transform=`rotate(${t>8&&t<11.2?-Math.max(0,18-ang*.8):0}deg)`;
- $('pointer').style.transformOrigin='50% 20%';
  const bn=seg(t,11.35,11.8),bo2=seg(t,12.35,12.7);
  $('banner').style.display=(t>11.35&&t<12.7)?'block':'none';
- $('banner').style.transform=`scale(${eElastic(bn)*(1-eIn(bo2))}) rotate(${(1-eOut(bn))*12}deg)`;
+ $('banner').style.transform=`scale(${L.wheel.sc*eElastic(bn)*(1-eIn(bo2))}) rotate(${(1-eOut(bn))*12}deg)`;
 
- // scene4 features
  popWords(W4,t,12.75,.12);$('s4a').style.opacity=1-seg(t,16.3,16.6);
  FE.forEach((f,i)=>{const k=seg(t,13.1+i*.55,13.65+i*.55),o=seg(t,16.2+i*.06,16.6+i*.06);
   f.el.style.display=(t>13&&t<16.8)?'flex':'none';
   f.el.style.opacity=clamp(k*2)*(1-o);
-  f.el.style.transform=`translateX(${(1-eOut(k))*900 - eIn(o)*1100}px) rotate(${(1-eOut(k))*6}deg) scale(${1+.03*Math.sin(Math.PI*seg(t,13.65+i*.55,14+i*.55))})`});
+  f.el.style.transform=`translateX(${(1-eOut(k))*f.g.from - eIn(o)*(f.g.from+200)}px) rotate(${(1-eOut(k))*6}deg) scale(${1+.03*Math.sin(Math.PI*seg(t,13.65+i*.55,14+i*.55))})`});
 
- // scene5
  const lk=seg(t,17.1,17.6);$('logo').style.opacity=clamp(lk*2);
  $('logo').style.transform=`translateY(${(1-eBack(lk))*-160}px) scale(${lerp(.6,1,eBack(lk))})`;
  popWords(W5,t,17.6,.1);$('s5a').style.opacity=t>16.5?1:0;
  const ck=seg(t,18.4,18.9);$('cta').style.opacity=clamp(ck*3);
  $('cta').style.transform=`scale(${eElastic(ck)*(1+.05*Math.max(0,Math.sin((t-18.9)*Math.PI*2))*(t>18.9?1:0))})`;
+ const sk=seg(t,18.8,19.2);$('stores').style.opacity=clamp(sk*2);
+ $('stores').style.transform=`translateY(${(1-eBack(sk))*40}px)`;
 
- // flash
  let fl=0;if(t>11.2)fl=Math.max(fl,.7*(1-seg(t,11.2,11.5)));if(t>16.45)fl=Math.max(fl,.5*(1-seg(t,16.45,16.8)));
  $('flash').style.opacity=fl;
 
- // particles
- bctx.clearRect(0,0,1080,1920);fctx.clearRect(0,0,1080,1920);
- if(t<3.6){BEANS.forEach(b=>{const tt=t-b.d*.8;if(tt<0)return;const y=-80+b.sp*tt;if(y>2000)return;
+ bctx.clearRect(0,0,VW,VH);fctx.clearRect(0,0,VW,VH);
+ if(t<3.6){BEANS.forEach(b=>{const tt=t-b.d*.8;if(tt<0)return;const y=-80+b.sp*tt;if(y>VH+80)return;
   bean(bctx,b.x,y,b.r+b.vr*tt,b.s,.55*(1-seg(t,3.2,3.6)))})}
- if(t>16.5){BEANS.forEach((b,i)=>{const tt=(t-16.5+b.d)%3.2;const y=-80+b.sp*.55*tt;bean(bctx,b.x,y,b.r+b.vr*tt,b.s*.8,.28)})}
- ring(fctx,t,1.45,P.x,1560,'rgba(255,176,58,.8)');
- ring(fctx,t,6.75,540,1830,'rgba(255,255,255,.8)');
- ring(fctx,t,11.2,540,860,'rgba(255,255,255,.9)');
- confetti(fctx,t,11.2,540,860);
- confetti(fctx,t,17.25,540,1000);
- sparkles(bctx,t,17.3,540,1000,2.6);
- sparkles(fctx,t,1.5,540,1250,1.6);
+ if(t>16.5){BEANS.forEach(b=>{const tt=(t-16.5+b.d)%3.2;const y=-80+b.sp*.55*tt;bean(bctx,b.x,y,b.r+b.vr*tt,b.s*.8,.28)})}
+ const s5c=L.s5.y-330*L.s5.s;
+ ring(fctx,t,1.45,L.s1.x,L.s1.y-20,'rgba(255,176,58,.8)');
+ ring(fctx,t,6.75,L.s2.x,L.s2.y-30,'rgba(255,255,255,.8)');
+ ring(fctx,t,11.2,L.wheel.x,L.wheel.y,'rgba(255,255,255,.9)');
+ confetti(fctx,t,11.2,L.wheel.x,L.wheel.y);
+ confetti(fctx,t,17.25,L.s5.x,s5c);
+ sparkles(bctx,t,17.3,L.s5.x,s5c,2.6);
+ sparkles(fctx,t,1.5,L.s1.x,L.s1.y-330*L.s1.s,1.6);
 };
 window.ready=document.fonts.ready.then(()=>Promise.all([...document.images].map(i=>i.decode())));
 </script>
