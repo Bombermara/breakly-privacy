@@ -71,6 +71,20 @@ add(kick(1),19.5); add(snare(),19.5,.6)
 for m in [48,55,60,64,67,72,76]: add(ep(m,1.5,.15),19.5)
 add(sq(84,.4,.06,.25),19.5)
 
+# --- azioni di Chicca ---
+def step(g=.25):
+    n=int(.08*SR); t=np.arange(n)/SR; f=220+200*np.exp(-t*60)
+    return np.sin(2*np.pi*np.cumsum(f)/SR)*np.exp(-t*45)*g
+for a,b in ((3.8,4.2),(6.0,6.4),(9.2,9.7)):
+    tt=a
+    while tt<b: add(step(.3),tt,1,.2); tt+=np.pi/28
+add(whoosh(.3,True,.2),2.95); add(boing(.2),3.3)              # saltello sullo slogan
+add(pop(800,1500,.25),6.25)                                   # pillola "lascia decidere a Chicca"
+add(whoosh(.6,True,.5),CH1+.05); add(thud(.5) if 'thud' in dir() else boom(.4),CH1+.7)   # salto mortale + atterraggio
+for c0 in (9.9,11.5,13.1,14.7): add(step(.2),c0+.3)           # saltelli vicino al telefono
+add(whoosh(.7,True,.45),15.6)                                 # piroetta
+for i in range(8): add(step(.18),17.5+i*.25,1,(-1)**i*.3)     # balletto
+
 mix=np.stack([L,R],1)
 fade=np.ones(N); fi=int(.15*SR); fade[-fi:]=np.linspace(1,0,fi); mix*=fade[:,None]
 mix/=np.abs(mix).max(); mix=np.tanh(mix*1.6)/np.tanh(1.6)*.92
